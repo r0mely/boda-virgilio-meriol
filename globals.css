@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fbf8f2;
+  color: #332b22;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #c6a55c;
+  color: #fbf8f2;
+}
+
+/* Scrollbar dorada discreta */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f2e9;
+}
+::-webkit-scrollbar-thumb {
+  background: #d9bd80;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c6a55c;
+}
+
+/* Utilidad: filete dorado fino */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #c6a55c 20%,
+    #c6a55c 80%,
+    transparent
+  );
+}
+
+.text-shimmer {
+  background: linear-gradient(120deg, #9c7a3c, #e4d0a7, #c6a55c, #e4d0a7, #9c7a3c);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
